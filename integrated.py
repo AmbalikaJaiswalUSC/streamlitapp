@@ -6,12 +6,12 @@ import folium
 from streamlit_folium import st_folium
 
 # Path to the CSV file and GeoJSON file
-csv_path = r'D:\viterbi syllabus\dsci554\project_554\FastFoodRestaurants.csv'
-geojson_path = r'D:\viterbi syllabus\dsci554\project_554\us-states.json'
-income_csv_path = r'D:\viterbi syllabus\dsci554\project_554\Household_income.csv'
-# death_csv_path = r'D:\viterbi syllabus\dsci554\project_554\Deaths_data.csv'
+csv_path = 'FastFoodRestaurants.csv'
+geojson_path = 'us-states.json'
+income_csv_path = 'Household_income.csv'
+# death_csv_path = 'Deaths_data.csv'
 # # Creating DataFrame
-obesity_csv_path = r'D:\viterbi syllabus\dsci554\project_554\obesity.csv'
+obesity_csv_path = 'obesity.csv'
 
 
 
@@ -456,7 +456,7 @@ if selected_section == "Food Locator":
     # st.write("Interactive map of California with data points from the provided file.")
 
     # File path to the dataset
-    file_path = r"D:\viterbi syllabus\dsci554\project_554\cal.csv"
+    file_path ='cal.csv'
 
     # Load data
     data = load_data(file_path)
