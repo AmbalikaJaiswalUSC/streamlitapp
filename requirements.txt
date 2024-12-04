@@ -3,3 +3,5 @@ folium
 pandas
 numpy
 streamlit_folium
+plotly
+geopandas
