@@ -286,6 +286,40 @@ elif selected_section == "Best Place to Live":
 
     # Render the map
     st.pydeck_chart(deck)
+    st.markdown(
+    "<h2 style='font-size: 28px; font-weight: bold;'>Food Locations Across California State</h2>",
+    unsafe_allow_html=True
+    )
+    @st.cache_data
+    def load_data(file_path):
+        return pd.read_csv(file_path)
+
+    # File path to the dataset
+    file_path = 'cal.csv'
+
+    # Load data
+    data = load_data(file_path)
+
+    # Validate necessary columns
+    required_columns = ["latitude", "longitude", "address", "name"]
+    if not all(col in data.columns for col in required_columns):
+        st.error(f"The dataset must contain the following columns: {', '.join(required_columns)}")
+
+    # Create a base map centered on California
+    # california_map = folium.Map(location=[37.5, -119.5], zoom_start=6)
+    california_map = folium.Map(location=[34.0522, -118.2437], zoom_start=11)
+
+    # Add individual markers to the map
+    for _, row in data.iterrows():
+        tooltip_text = f"Name: {row['name']}<br>Address: {row['address']}"  # Combine name and address
+        folium.Marker(
+            location=[row["latitude"], row["longitude"]],
+            popup=tooltip_text,  # Popup to show details
+            tooltip=tooltip_text  # Tooltip for hover
+        ).add_to(california_map)
+
+    # Display the map
+    st_folium(california_map, width=800, height=600)
 
 
     # Code for Fitness centers and groceries
