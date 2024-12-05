@@ -475,7 +475,7 @@ elif selected_section == "Smart Route Planner":
         visible=True,
         projection_type="albers usa"
     )
-    st.dataframe(df)
+    # st.dataframe(df)
     # Display the map in Streamlit
     st.plotly_chart(fig, use_container_width=True)
 
