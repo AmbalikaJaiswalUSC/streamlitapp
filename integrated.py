@@ -383,7 +383,7 @@ elif selected_section == "Smart Route Planner":
         return pd.read_csv(file_path, encoding='ISO-8859-1')
 
     st.markdown(
-        "<h2 style='font-size: 28px; font-weight: bold;'>Fitness Centers and Grocery Shops across Los Angelese</h2>",
+        "<h2 style='font-size: 28px; font-weight: bold;'>Fitness Centers and Grocery Shops across Los Angeles</h2>",
         unsafe_allow_html=True
     )
 
